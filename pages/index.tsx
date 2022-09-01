@@ -12,7 +12,7 @@ const contextInit = {
 export const AppContext = React.createContext(contextInit);
 
 export async function getServerSideProps() {
-  const data = await fetch(process.env.API);
+  const data = await fetch(process.env.API || "");
   const res = await data.json();
 
   return {
